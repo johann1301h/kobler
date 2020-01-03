@@ -140,7 +140,7 @@
 }
 
 #box #cancel {
-  background-color: none;
+  background-color: white;
   border: none;
   text-decoration: underline;
   cursor: pointer;
