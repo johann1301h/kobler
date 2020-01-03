@@ -1,0 +1,151 @@
+#boxWrapper {
+  position: absolute;
+  min-height: 500px;
+  top: 0px;
+  bottom: 0px;
+  width: 100vw;
+  pointer-events: none;
+  z-index: 11;
+}
+
+#box {
+  pointer-events: all;
+  position: relative;
+  width: calc(100% - 20px);
+  max-width: 500px;
+  margin: 0 auto;
+  top: 0px;
+  z-index: 11;
+  top: 5vw;
+  min-height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0px rgba(0,0,0,0.4);
+  display: none;
+  overflow: hidden;
+}
+
+#box > header {
+  height: 50px;
+  background-color: #EEEEEE;
+  border-bottom: 1px solid lightgray;
+}
+
+#box > header > h1 {
+  line-height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: inline-block;
+  font-size: 15px;
+  margin: 0px;
+  border-bottom: 1px solid lightgray;
+}
+
+#box > header > button {
+  position: absolute;
+  right: 0px;
+  margin: 15px;
+  padding: 0;
+  background-image: url('closeBoxLight.svg');
+  height: 20px;
+  width: 20px;
+  border: 0;
+  background-size: 20px;
+  background-color: #EEEEEE;
+  cursor: pointer;
+}
+
+#box > div {
+  position: relative;
+  margin: 20px;
+}
+
+#box form input {
+  width: 100%;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  min-height: 40px;
+}
+
+#box form input[type="date"] {
+  background: url('calendar.svg') 5% 50% no-repeat white;
+  padding-left: 40px;
+}
+
+#box form button {
+  width: 100%;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+#box form select {
+  margin: 0px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  min-height: 40px;
+  background: url('dropdown.svg') 97% 52% no-repeat white;
+  background-size: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#box form p {
+  width: 100%;
+  margin: 20px 0 2px 0;
+  white-space: nowrap;
+}
+
+#box > div > form > .compressed {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+#box > div > form > .compressed > div {
+  margin: 0px 10px 20px 0px;
+}
+
+#box > div > form > .compressed > div:last-child {
+  margin: 0px;
+}
+
+#box > div > form > .compressed > div:last-child {
+  margin: 0px;
+}
+
+#box > div > form > .buttons {
+  width: 100%;
+  display: flex;
+}
+
+#box > div > form > .buttons > div {
+  margin-right: 10px;
+}
+
+#box #createArticle {
+  background-color: #01B285;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+#box #cancel {
+  background-color: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#box .published {
+  width: 200px;
+}

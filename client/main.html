@@ -1,25 +1,190 @@
 <head>
-  <title>kobler</title>
+  <meta charset="utf-8">
+  <title>Kobler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
-  {{> info}}
+  <header id="clients">
+    Online users: loading...
+  </header>
+
+  <section>
+
+    <div></div>
+
+    <div>
+      <table style="display:none" id="table">
+
+        <tr>
+          <th colspan=10>
+            <h1>Articles</h1>
+            <button id="createNew">Create new</button>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            Title
+            <button data-order="-1" id="sort_title"></button>
+          </th>
+          <th>
+            Published
+            <button data-order="-1" id="sort_published"></button>
+          </th>
+          <th>
+            Site
+            <button data-order="-1" id="sort_site"></button>
+          </th>
+          <th>
+            Ad group
+            <button data-order="-1" id="sort_ad_group"></button>
+          </th>
+          <th>
+            Bids
+            <button data-order="-1" id="sort_bids"></button>
+          </th>
+          <th>
+            Spending
+            <button data-order="-1" id="sort_spending"></button>
+          </th>
+          <th>
+            Win rate
+            <button data-order="-1" id="sort_win_rate"></button>
+          </th>
+          <th>
+            Impressions
+            <button data-order="-1" id="sort_impressions"></button>
+          </th>
+          <th>
+            Clicks
+            <button data-order="-1" id="sort_click"></button>
+          </th>
+          <th>
+            CTR
+            <button data-order="-1" id="sort_ctr"></button>
+          </th>
+        </tr>
+
+        <tr>
+          <td colspan=10>
+            Loading...
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan=10>
+            <span>Loaded</span>
+            <span id="loaded">6</span>
+            <span>of</span>
+            <span id="total">98</span>
+            <button id="loadMore">Load more</button>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+    <div></div>
+
+  </section>
+
+  <div id="overlay"></div>
+  <div id="boxWrapper">
+    <div id="box">
+      <header>
+        <h1>
+          New article
+        </h1>
+        <button id="closeBox"></button>
+      </header>
+      <div>
+
+        <form id="createNewForm">
+
+          <div class="title">
+            <p>Title</p>
+            <input data-type="string" type="text" name="title">
+          </div>
+
+          <div class="published">
+            <p>Published</p>
+            <input data-type="date" type="date" name="published">
+          </div>
+
+          <div class="site">
+            <p>Site</p>
+            <select name='site'>
+              <option value="VG">VG</option>
+              <option value="Dagbladet">Dagbladet</option>
+              <option value="KK">KK</option>
+              <option value="NRK">NRK</option>
+              <option value="TV2">TV2</option>
+            </select>
+          </div>
+
+          <div class="ad_group">
+            <p>Ad group</p>
+            <select name='ad_group'>
+              <option value="Klær">Klær</option>
+              <option value="Bil">Bil</option>
+              <option value="Finans">Finans</option>
+              <option value="Interiør">Interiør</option>
+              <option value="Sport">Sport</option>
+            </select>
+          </div>
+
+          <div class="compressed">
+            <div class="bids">
+              <p>Bids</p>
+              <input data-type="number" type="text" name="bids">
+            </div>
+
+            <div class="spending">
+              <p>Spending</p>
+              <input data-type="number" data-add-before="kr " type="text" name="spending">
+            </div>
+
+            <div class="win_rate">
+              <p>Win rate</p>
+              <input data-type="number" data-add-after="%" type="text" name="win_rate">
+            </div>
+
+            <div class="impressions">
+              <p>Impressions</p>
+              <input data-type="number" type="text" name="impressions">
+            </div>
+
+            <div class="clicks">
+              <p>Clicks</p>
+              <input data-type="number" type="text" name="clicks">
+            </div>
+
+            <div class="ctr">
+              <p>CTR</p>
+              <input data-add-after="%" data-type="number" type="text" name="ctr">
+            </div>
+          </div>
+
+          <div class="buttons">
+
+            <div class="submit">
+              <input id="createArticle" type="submit" value="Create article" name="submit">
+            </div>
+
+            <div class="cancel">
+              <button id="cancel">Cancel</button>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
 </body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
-</template>

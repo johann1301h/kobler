@@ -1,4 +1,164 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
 body {
+  margin: 0;
+}
+
+section {
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+  overflow-x: scroll;
+  white-space: nowrap;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+section > div {
+  display: inline-block;
+  min-width: 20px;
+  min-height: 20px;
+  height: auto;
+  width: auto;
+  font-size: initial;
+}
+
+tr {
+  transition: background-color 0.4s;
+}
+
+#overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  display: none;
+}
+
+#clients {
+  position: relative;
+  padding: 20px;
+  margin: 0 0 100px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+#table {
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid lightgray;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+th > button {
+  position: absolute;
+  right: 10px;
+  width: 10px;
+  bottom: 0px;
+  top: 0px;
+  margin: 0px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 0px;
+  background: url('sortNone.svg');
+  background-position: center;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
+tr:last-child > th > button {
+  margin: 0;
+  padding: 5px 20px 5px 10px;
+  position: relative;
+  background-color: #FAEC32;
+  font-size: 15px;
+  display: inline-block;
+}
+
+tr:nth-child(1) > th > h1 {
+  margin: 0;
+  padding: 5px 20px 5px 10px;
+  position: relative;
+  left: -20px;
+  background-color: #FAEC32;
+  font-size: 15px;
+  display: inline-block;
+}
+
+tr:nth-child(1) > th > button {
+  width: auto;
+  position: relative;
+  left: -10px;
+  background: red;
+  font-size: 15px;
+  padding-left: 26px;
+  text-decoration: underline;
+  background: url('createNew.svg');
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  background-size: 26px;
+  color: black;
+  border: none;
+}
+
+tr:nth-child(1) > th {
+  border-bottom: none;
+}
+
+tr:nth-child(1) > th > button:active {
+  color: gray;
+}
+
+tr:nth-child(2) {
+  border-bottom: 2px solid lightgray;
+}
+
+tr:last-child > td > button {
+  position: relative;
+  color: #2693FF;
+  background-color: white;
+  text-decoration: underline;
+  border: none;
+  cursor: pointer;
+}
+
+tr:last-child > td > button:active {
+  color: #0072E2;
+}
+
+td, th {
+  position: relative;
   padding: 10px;
-  font-family: sans-serif;
+  text-align: left;
+  border-bottom: 1px solid lightgray;
+}
+
+span {
+  display: inline-block;
+}
+
+th {
+  padding-right: 30px
+}
+
+@media (any-hover: hover) {
+  tr:nth-child(n+3):hover {
+    background: #FAFAFA;
+  }
+  tr:last-child:hover {
+    background: none;
+  }
+}
+
+a {
+  color: #2693FF;
+  text-decoration: underline;
 }

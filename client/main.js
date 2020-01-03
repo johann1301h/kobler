@@ -1,22 +1,34 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import Clients from './clients.js';
+import Overlay from './overlay.js';
+import Box from './box.js';
+import Table from './table.js';
 
-import './main.html';
+const clients = new Clients();
+const overlay = new Overlay();
+const box = new Box();
+const table = new Table();
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+clients.listen(1000);
+
+overlay.addClickListener(() => {
+  box.hideBox();
+  overlay.hideOverlay();
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+box.addCloseListener(() => {
+  box.hideBox();
+  overlay.hideOverlay();
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+box.addCreateNewCallbackListener(() => {
+  const plusOne = table.loaded + 1;
+  table.fetch(plusOne);
+  box.hideBox();
+  overlay.hideOverlay();
+});
+
+table.fetch(4);
+table.addCreateNewListener(() => {
+  box.showBox();
+  overlay.showOverlay();
 });
