@@ -71,7 +71,7 @@
   min-height: 40px;
 }
 
-#box form input[type="date"] {
+#box form input[name="published"] {
   background: url('calendar.svg') 5% 50% no-repeat white;
   padding-left: 40px;
 }

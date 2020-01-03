@@ -91,6 +91,10 @@ class Box {
     }
   }
 
+  checkDateFormat(date) {
+    return date.match(/^(\d{1,2}).(\d{1,2}).(\d{4})$/);
+  }
+
   collectForm() {
     let input, before, after, type, node, value;
     const valueObject = {};
@@ -126,9 +130,11 @@ class Box {
 
       // check against date type and reformat
       if (type === 'date') {
-        value = value.split('-').reverse().join('.');
+        if (!this.checkDateFormat(value)) {
+          this.setWarning(node);
+          success = false;
+        }
       }
-
 
       // trim value
       value = value.trim();
