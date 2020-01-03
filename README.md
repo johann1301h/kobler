@@ -1,6 +1,3 @@
-## About
--
-
 ## Installing
 This project is built using [Meteor](https://www.meteor.com). Make sure it is [installed](https://www.meteor.com/install) on your system.
 
