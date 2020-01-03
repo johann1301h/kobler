@@ -13,3 +13,12 @@ $ meteor npm install
 Then start the server.
 ```
 $ meteor run
+```
+
+## Note
+
+If you run into issues getting the server started, try running the following.
+
+```
+$ meteor reset
+```
